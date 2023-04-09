@@ -25,9 +25,9 @@ try:  # подключение к бд
             # Понедельник1 из БД
             done_selected_lesson2 = pre_done_selected_lesson2.replace("',),)", "")  # значение в виде строки из
             # Понедельник2 из БД
-            switching_lessons1 = f"UPDATE класс SET Понедельник1 = '{done_selected_lesson2}';"
+            switching_lessons1 = f"UPDATE класс SET Понедельник1 = '{done_selected_lesson2}' WHERE `Класс` = '11Л';"
             cursor.execute(switching_lessons1)
-            switching_lessons2 = f"UPDATE класс SET Понедельник2 = '{done_selected_lesson1}';"
+            switching_lessons2 = f"UPDATE класс SET Понедельник2 = '{done_selected_lesson1}' WHERE `Класс` = '11Л';"
             cursor.execute(switching_lessons2)
             connection.commit()
 
