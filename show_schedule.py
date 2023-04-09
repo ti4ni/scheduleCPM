@@ -70,8 +70,7 @@ try:  # подключение к бд
                   "thursday_2", "thursday_3", "thursday_4", "thursday_5", "friday_1", "friday_2", "friday_3",
                   "friday_4",
                   "friday_5", "saturday_1", "saturday_2", "saturday_3", "saturday_4", "saturday_5"]
-            result = {l2[i]: l1[i] for i in range(len(l2))}
-            print(json.dumps(result))  # тут нужно добавить decoding для русского языка
+            result = {l2[i]: l1[i] for i in range(len(l2))}  # тут нужно добавить decoding для русского языка
             json_show_class = json.dumps(result)  # это результат показа, упакованный в json
 
     finally:  # закрываем подключение
