@@ -14,7 +14,8 @@ try:  # подключение к бд
     def replacing(original, new, klass):
         try:
             with connection.cursor() as cursor:  # Заменить конкретную пару в расписании. Осталось лишь передавать
-                # Значения в переменную. А так - оно полностью работает
+                # Значения в переменную. А так - оно полностью работает. Для примера поставил "Понедельник1", 
+                # "Алгебра", "11Л
                 replace_lesson = f"UPDATE `класс` SET `{original}` = '{new}' WHERE `Класс` = '{klass}';"
                 cursor.execute(replace_lesson)
                 connection.commit()
