@@ -10,15 +10,19 @@ try:  # подключение к бд
         database="schedulecpm",
     )
 
-    try:
-        with connection.cursor() as cursor:  # Заменить конкретную пару в расписании. Но тут нужно добавить, какую
-            # Именно пару мы изменяем. В качестве примера, я тут руками поставил 1 пару в понедельник
-            replace_lesson = f"UPDATE `класс` SET `Понедельник1`='Русский язык';"
-            cursor.execute(replace_lesson)
-            connection.commit()
 
-    finally:  # закрываем подключение
-        connection.close()
+    def replacing(original, new, klass):
+        try:
+            with connection.cursor() as cursor:  # Заменить конкретную пару в расписании. Осталось лишь передавать
+                # Значения в переменную. А так - оно полностью работает
+                replace_lesson = f"UPDATE `класс` SET `{original}` = '{new}' WHERE `Класс` = '{klass}';"
+                cursor.execute(replace_lesson)
+                connection.commit()
+
+        finally:  # закрываем подключение
+            connection.close()
+
+    replacing("Понедельник1", "Алгебра", "11Л")
 
 except Exception as ex:  # вывод ошибок
     print(ex)
