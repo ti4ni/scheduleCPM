@@ -31,7 +31,7 @@ try:  # подключение к бд
                 pre_capacity_audience = cursor.fetchall()
                 for cap in pre_capacity_audience:
                     server_pre_capacity_audience = json.dumps(cap)  # кривая строка
-                    normal_pre_capacity_audience = json.loads(server_pre_capacity_audience)  # массив с нормальной 
+                    normal_pre_capacity_audience = json.loads(server_pre_capacity_audience)  # массив с нормальной
                     # строкой
                 capacity_audience = normal_pre_capacity_audience[0]  # нормальная строка
 
@@ -53,7 +53,7 @@ try:  # подключение к бд
                     normal_klasses = json.loads(server_klasses)  # массив с нормальной строкой
                 klass = normal_klasses[0]  # нормальная строка
 
-                pre_teacher = f"SELECT `{day}` FROM `преподаватель` WHERE `ФИО` = '{prepod}';"  # Проверка на то, не 
+                pre_teacher = f"SELECT `{day}` FROM `преподаватель` WHERE `ФИО` = '{prepod}';"  # Проверка на то, не
                 # занят ли учитель в это время.
                 cursor.execute(pre_teacher)
                 teachers = cursor.fetchall()
@@ -80,7 +80,7 @@ try:  # подключение к бд
         finally:  # закрываем подключение
             connection.close()
 
-    status("Пустовит Егор Константинович", "11Л", "310", "Понедельник1"))
+    status("Пустовит Егор Константинович", "11Л", "310", "Понедельник1")
 
 except Exception as ex:  # вывод ошибок
     print(ex)
