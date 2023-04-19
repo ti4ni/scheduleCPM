@@ -22,7 +22,8 @@ try:  # подключение к бд
         finally:  # закрываем подключение
             connection.close()
 
-    replacing("Понедельник1", "Алгебра", "11Л")
+
+    replacing("Понедельник2", "Алгебра", "9Д")
 
 except Exception as ex:  # вывод ошибок
     print(ex)
