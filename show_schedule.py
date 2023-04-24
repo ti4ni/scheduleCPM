@@ -75,7 +75,7 @@ try:  # подключение к бд
             connection.close()
 
 
-    show("11Л")
+    print(show("11Л"))
 
 except Exception as ex:  # вывод ошибок
     print(ex)
